@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 260px;
+      min-height: 180px;
+      background: #000;
+      color: rgba(255, 255, 255, 0.85);
+      font-family: -apple-system, 'Inter', system-ui, sans-serif;
+      font-size: 13px;
+      padding: 28px 24px 24px;
+    }
+
+    .logo {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: rgba(255, 255, 255, 0.2);
+      margin-bottom: 28px;
+      user-select: none;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 13px;
+      font-family: inherit;
+      padding: 6px 0;
+      margin-bottom: 16px;
+      outline: none;
+      caret-color: rgba(255, 154, 98, 0.9);
+      transition: border-color 0.2s;
+    }
+    input:focus { border-bottom-color: rgba(255, 255, 255, 0.32); }
+    input::placeholder { color: rgba(255, 255, 255, 0.18); }
+
+    #enter-btn {
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.35);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      cursor: pointer;
+      padding: 0;
+      margin-top: 4px;
+      font-family: inherit;
+      transition: color 0.2s;
+    }
+    #enter-btn:hover { color: rgba(255, 255, 255, 0.75); }
+    #enter-btn:disabled { color: rgba(255, 255, 255, 0.15); cursor: default; }
+
+    #err {
+      color: rgba(248, 113, 113, 0.8);
+      font-size: 11px;
+      margin-top: 12px;
+      min-height: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Connected state ── */
+    #connected-view {
+      display: none;
+    }
+    .connected-label {
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: rgba(255, 255, 255, 0.28);
+      margin-bottom: 10px;
+    }
+    .connected-email {
+      font-size: 12px;
+      color: rgba(212, 163, 115, 0.8);
+      letter-spacing: 0.03em;
+      word-break: break-all;
+    }
+    #logout-btn {
+      display: inline-block;
+      margin-top: 22px;
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.15);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      padding: 0;
+      font-family: inherit;
+      transition: color 0.2s;
+    }
+    #logout-btn:hover { color: rgba(255, 255, 255, 0.45); }
+  </style>
+</head>
+<body>
+  <div class="logo">✦ ASTERISM</div>
+
+  <!-- Login view -->
+  <div id="login-view">
+    <input id="email" type="email" placeholder="email" autocomplete="off" spellcheck="false" />
+    <input id="password" type="password" placeholder="password" />
+    <button id="enter-btn">进入</button>
+    <div id="err"></div>
+  </div>
+
+  <!-- Connected view -->
+  <div id="connected-view">
+    <div class="connected-label">&gt; Connected to Void</div>
+    <div class="connected-email" id="display-email"></div>
+    <button id="logout-btn">LOGOUT</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

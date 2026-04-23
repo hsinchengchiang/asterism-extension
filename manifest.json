@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Asterism 星野：你的灵感星图",
+  "short_name": "Asterism",
+  "version": "1.0.3",
+  "description": "右键捕获碎片，落入星野。打破文件夹的束缚，让每一次灵感闪烁都被语义网络精准捕获。",
+  "permissions": ["activeTab", "contextMenus", "storage", "scripting"],
+  "host_permissions": ["https://asterism.art/*", "<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "default_title": "Asterism ✦"
+  }
+}
